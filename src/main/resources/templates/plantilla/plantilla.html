@@ -1,0 +1,18 @@
+
+<html lang="en"  html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla</title>
+</head>
+<body>
+    <header th:fragment="encabezado">
+        <div style="float:right;">
+            <h6>Autor <img alt="Vinni image" src="https://github.com/vinnikam.png"/></h6>
+        </div>
+    </header>
+    <div th:fragment="volver">
+        <a th:href="@{/}" class="btn btn-info">volver</a>
+    </div>
+
+</body>
+</html>

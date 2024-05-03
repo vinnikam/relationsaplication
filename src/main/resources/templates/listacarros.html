@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicacion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:replace="plantilla/plantilla :: encabezado"/>
+<div class="container" style="width : 90%">
+    <br>
+    <a class="btn btn-primary" href="#" th:href="@{/carro/lista}">Adicionar Carro</a>
+
+    <br> <br>
+
+    <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>Codigo</th>
+        <th>Modelo</th>
+        <th>placa</th>
+        <th>identificacion</th>
+        <th>nombre</th>
+        <th>Acciones</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="dato : ${listacarrosT}">
+        <td th:text="${dato.codigo}">Codigo</td>
+        <td th:text="${dato.modelo}">Modelo</td>
+        <td th:text="${dato.placa}">placa</td>
+        <td th:text="${dato.propietario?.identificacion}">identificacion</td>
+        <td th:text="${dato.propietario?.nombre}">nombre</td>
+        <td >
+
+        </td>
+
+    </tr>
+    </tbody>
+
+</table>
+    <br>
+    <div th:replace="plantilla/plantilla :: volver"></div>
+</div>
+</body>
+</html>
