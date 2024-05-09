@@ -83,8 +83,8 @@ public class ControladorCarro {
 
 
 
-    public void crearCarro(Carro carro){
-        serviciosCarro.crear(carro);
+    public Carro crearCarro(Carro carro){
+        return serviciosCarro.crear(carro);
     }
 
     public Carro buscarCarro(int pk){
