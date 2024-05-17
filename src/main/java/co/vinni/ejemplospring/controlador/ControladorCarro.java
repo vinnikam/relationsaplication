@@ -21,33 +21,19 @@ import java.util.List;
 public class ControladorCarro {
 
 
-    ServiciosCarro serviciosCarro;
-    private int valor = 0;  // develop
-    @Autowired
-    ServiciosPropietario serviciosPropietario;
+    private final ServiciosCarro serviciosCarro;
 
-    public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
-        this.serviciosPropietario = serviciosPropietario;
+    private final ServiciosPropietario serviciosPropietario;
+
+    public ControladorCarro(ServiciosCarro serviciosCarro, ServiciosPropietario serviciosPropietario) {
         this.serviciosCarro = serviciosCarro;
-       
-
-        while (this.serviciosCarro != null)
-        {
-            for (int i = 0; i < 10; i++) {
-                System.out.println();
-            }
-        }
-
+        this.serviciosPropietario = serviciosPropietario;
     }
 
     @GetMapping({  "/carro/lista"})
     public String listarEquipos(Model model){
         model.addAttribute("listacarrosT",serviciosCarro.consultarT());
 
-        for (Carro elcarro : serviciosCarro.consultarT()){
-            System.out.println( elcarro);
-        }
-        System.out.println("Paso por aca");
         return "listacarros";
     }
 
@@ -60,11 +46,13 @@ public class ControladorCarro {
         model.addAttribute("carrollenar",carrollenar);
         model.addAttribute("listapropietarios",this.serviciosPropietario.consultarT());
 
+
         return "formcreacarro";
     }
 
     @PostMapping({  "/accioncrear"})
     public String accioncrear(@ModelAttribute("carrollenar") Carro carro){
+
         this.serviciosCarro.crear(carro);
         return "redirect:/carro/lista";
     }

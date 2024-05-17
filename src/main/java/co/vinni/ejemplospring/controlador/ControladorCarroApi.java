@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class ControladorCarroApi {
 
     int a = 0;
-    @Autowired
-    ServiciosCarro serviciosCarro;
+    public final ServiciosCarro serviciosCarro;
 
     public ControladorCarroApi(ServiciosCarro serviciosCarro) {
         this.serviciosCarro = serviciosCarro;
