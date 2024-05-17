@@ -11,9 +11,12 @@ import java.util.List;
 @Service
 public class ServiciosPropietario implements OperacionesPropietario {
 
-    @Autowired
+
     RepositorioPropietario repositorioPropietario ;
-    
+
+    public ServiciosPropietario(RepositorioPropietario repositorioPropietario) {
+        this.repositorioPropietario = repositorioPropietario;
+    }
 
     @Override
     public Propietario crear(Propietario propietario) {
@@ -29,7 +32,7 @@ public class ServiciosPropietario implements OperacionesPropietario {
 
     @Override
     public void borrar(Propietario propietario) {
-         repositorioPropietario.delete(propietario);;
+         repositorioPropietario.delete(propietario);
     }
 
     @Override

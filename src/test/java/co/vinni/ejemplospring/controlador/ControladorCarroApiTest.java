@@ -24,9 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest
 class ControladorCarroApiTest {
 
-    @Test
-    void crear() {
-    }
+
     @Autowired
     private MockMvc mockMvc;
 

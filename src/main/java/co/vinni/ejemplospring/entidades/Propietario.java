@@ -3,8 +3,6 @@ package co.vinni.ejemplospring.entidades;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Data
 @Entity
 @AllArgsConstructor
