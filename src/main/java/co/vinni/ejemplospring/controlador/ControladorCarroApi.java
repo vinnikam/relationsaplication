@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/carros")
 public class ControladorCarroApi {
 
-
+    int a = 0;
+    @Autowired
     ServiciosCarro serviciosCarro;
 
     public ControladorCarroApi(ServiciosCarro serviciosCarro) {
