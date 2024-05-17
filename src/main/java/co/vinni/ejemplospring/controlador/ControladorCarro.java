@@ -22,6 +22,7 @@ public class ControladorCarro {
 
     @Autowired
     ServiciosCarro serviciosCarro;
+    int valor = 0;  // develop
     @Autowired
     ServiciosPropietario serviciosPropietario;
 
