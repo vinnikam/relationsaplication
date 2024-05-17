@@ -22,7 +22,8 @@ public class ControladorCarro {
 
 
     ServiciosCarro serviciosCarro;
-    private int x = 0; // rama -issues
+    private int valor = 0;  // develop
+    @Autowired
     ServiciosPropietario serviciosPropietario;
 
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
@@ -34,7 +35,10 @@ public class ControladorCarro {
     public String listarEquipos(Model model){
         model.addAttribute("listacarrosT",serviciosCarro.consultarT());
 
-
+        for (Carro elcarro : serviciosCarro.consultarT()){
+            System.out.println( elcarro);
+        }
+        System.out.println("Paso por aca");
         return "listacarros";
     }
 
@@ -65,6 +69,16 @@ public class ControladorCarro {
     public Carro buscarCarro(int pk){
         return  serviciosCarro.consultarPK(pk);
 
+
+        /*if(carro != null){
+            Moto moto = serviciosMoto.consultarPK(carro.getIdmoto());
+            return  Carro
+                    .builder()
+                    .placa(carro.getPlaca())
+                    .moto(moto)
+                    .build();
+        }*/
+        return null;
     }
 }
 
