@@ -29,12 +29,15 @@ public class ControladorCarro {
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
         this.serviciosPropietario = serviciosPropietario;
         this.serviciosCarro = serviciosCarro;
-        while (true)
+       
+
+        while (this.serviciosCarro != null)
         {
             for (int i = 0; i < 10; i++) {
                 System.out.println();
             }
         }
+
     }
 
     @GetMapping({  "/carro/lista"})
