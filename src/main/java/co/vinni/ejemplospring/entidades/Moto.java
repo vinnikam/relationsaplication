@@ -12,6 +12,7 @@ import lombok.*;
 @ToString
 /**
  * author : Vinni
+ * version 1.0
  */
 
 public class Moto {
