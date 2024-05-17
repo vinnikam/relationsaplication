@@ -22,21 +22,32 @@ public class ControladorCarro {
 
 
     ServiciosCarro serviciosCarro;
-
+    private int valor = 0;  // develop
+    @Autowired
     ServiciosPropietario serviciosPropietario;
 
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
         this.serviciosPropietario = serviciosPropietario;
         this.serviciosCarro = serviciosCarro;
-        if (true)
-            return ;
+       
+
+        while (this.serviciosCarro != null)
+        {
+            for (int i = 0; i < 10; i++) {
+                System.out.println();
+            }
+        }
+
     }
 
     @GetMapping({  "/carro/lista"})
     public String listarEquipos(Model model){
         model.addAttribute("listacarrosT",serviciosCarro.consultarT());
 
-
+        for (Carro elcarro : serviciosCarro.consultarT()){
+            System.out.println( elcarro);
+        }
+        System.out.println("Paso por aca");
         return "listacarros";
     }
 
