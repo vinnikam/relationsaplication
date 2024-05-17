@@ -28,6 +28,8 @@ public class ControladorCarro {
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
         this.serviciosPropietario = serviciosPropietario;
         this.serviciosCarro = serviciosCarro;
+        if (true)
+            return ;
     }
 
     @GetMapping({  "/carro/lista"})
