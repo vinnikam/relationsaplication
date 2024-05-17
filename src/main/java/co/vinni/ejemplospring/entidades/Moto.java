@@ -10,6 +10,10 @@ import lombok.*;
 @Table(name = "motos")
 @Builder
 @ToString
+/**
+ * author : Vinni
+ */
+
 public class Moto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
