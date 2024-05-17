@@ -29,6 +29,12 @@ public class ControladorCarro {
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
         this.serviciosPropietario = serviciosPropietario;
         this.serviciosCarro = serviciosCarro;
+        while (true)
+        {
+            for (int i = 0; i < 10; i++) {
+                System.out.println();
+            }
+        }
     }
 
     @GetMapping({  "/carro/lista"})
@@ -69,16 +75,6 @@ public class ControladorCarro {
     public Carro buscarCarro(int pk){
         return  serviciosCarro.consultarPK(pk);
 
-
-        /*if(carro != null){
-            Moto moto = serviciosMoto.consultarPK(carro.getIdmoto());
-            return  Carro
-                    .builder()
-                    .placa(carro.getPlaca())
-                    .moto(moto)
-                    .build();
-        }*/
-        return null;
     }
 }
 
