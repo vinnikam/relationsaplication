@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ControladorPropietarios {
 
-    @Autowired
+
     ServiciosPropietario serviciosPropietario;
+
+    public ControladorPropietarios(ServiciosPropietario serviciosPropietario) {
+        this.serviciosPropietario = serviciosPropietario;
+    }
 
     @GetMapping({  "/propietario/lista"})
     public String listarPropietarios(Model model){

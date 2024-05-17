@@ -12,8 +12,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/carros")
 public class ControladorCarroApi {
 
-    @Autowired
+
     ServiciosCarro serviciosCarro;
+
+    public ControladorCarroApi(ServiciosCarro serviciosCarro) {
+        this.serviciosCarro = serviciosCarro;
+    }
+
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Carro> crear(@Validated @RequestBody Carro entityDto) {

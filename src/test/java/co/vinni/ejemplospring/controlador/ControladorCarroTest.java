@@ -79,23 +79,5 @@ class ControladorCarroTest {
         assertThat(carroG).isNotNull();
 
     }
-    @Test
-    void listarEquipos() {
-    }
 
-    @Test
-    void cargarCarroModal() {
-    }
-
-    @Test
-    void accioncrear() {
-    }
-
-    @Test
-    void crearCarro() {
-    }
-
-    @Test
-    void buscarCarro() {
-    }
 }

@@ -12,7 +12,7 @@ class UtilidadesVariasTest {
     @Test
     void testCambioFecha(){
         String lafecha = UtilidadesVarias.convertirDatetoString(new Date());
-        assertNotEquals(lafecha, null);
+        assertNotNull(lafecha);
     }
 
 

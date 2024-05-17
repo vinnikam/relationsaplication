@@ -101,7 +101,7 @@ class ServiciosCarroTest {
 
         // then
         assertThat(carros).isEmpty();
-        assertThat(carros.size()).isEqualTo(0);
+        assertThat(carros.size()).isZero();
     }
     @DisplayName("Test listado de carros vacio")
     @Test
