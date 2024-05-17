@@ -20,21 +20,20 @@ import java.util.List;
 @Controller
 public class ControladorCarro {
 
-    @Autowired
-    ServiciosCarro serviciosCarro;
-    @Autowired
-    ServiciosPropietario serviciosPropietario;
 
+    private final ServiciosCarro serviciosCarro;
 
+    private final ServiciosPropietario serviciosPropietario;
+
+    public ControladorCarro(ServiciosCarro serviciosCarro, ServiciosPropietario serviciosPropietario) {
+        this.serviciosCarro = serviciosCarro;
+        this.serviciosPropietario = serviciosPropietario;
+    }
 
     @GetMapping({  "/carro/lista"})
     public String listarEquipos(Model model){
         model.addAttribute("listacarrosT",serviciosCarro.consultarT());
 
-        for (Carro elcarro : serviciosCarro.consultarT()){
-            System.out.println( elcarro);
-        }
-        System.out.println("Paso por aca");
         return "listacarros";
     }
 
@@ -48,37 +47,11 @@ public class ControladorCarro {
         model.addAttribute("listapropietarios",this.serviciosPropietario.consultarT());
 
 
-        System.out.println("Paso por aca formulario");
         return "formcreacarro";
     }
 
     @PostMapping({  "/accioncrear"})
     public String accioncrear(@ModelAttribute("carrollenar") Carro carro){
-        System.out.println("Paso por aca para guardar formulario");
-        System.out.println(carro);
-
-        /*Propietario p = Propietario
-                .builder()
-                .identificacion(carro.getPropietario().getIdentificacion())
-                .nombre(carro.getPropietario().getNombre())
-                .build();
-
-        Carro carro1 = Carro
-                .builder()
-                .modelo(carro.getModelo())
-                .placa(carro.getPlaca())
-                .build();
-
-
-        List<Carro> lista = new ArrayList<>();
-
-        lista.add(carro1);
-
-
-        Propietario p1 =  serviciosPropietario.crear(p);
-        System.out.println("++++++ "+p1);
-        */
-
 
         this.serviciosCarro.crear(carro);
         return "redirect:/carro/lista";
@@ -91,18 +64,9 @@ public class ControladorCarro {
     }
 
     public Carro buscarCarro(int pk){
-        Carro carro = serviciosCarro.consultarPK(pk);
+        return serviciosCarro.consultarPK(pk);
 
 
-        /*if(carro != null){
-            Moto moto = serviciosMoto.consultarPK(carro.getIdmoto());
-            return  Carro
-                    .builder()
-                    .placa(carro.getPlaca())
-                    .moto(moto)
-                    .build();
-        }*/
-        return null;
     }
 }
 
