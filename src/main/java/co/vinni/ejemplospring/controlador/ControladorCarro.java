@@ -22,7 +22,7 @@ public class ControladorCarro {
 
 
     ServiciosCarro serviciosCarro;
-
+    private int x = 0; // rama -issues
     ServiciosPropietario serviciosPropietario;
 
     public ControladorCarro(ServiciosPropietario serviciosPropietario, ServiciosCarro serviciosCarro) {
